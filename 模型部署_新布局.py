@@ -22,7 +22,7 @@ st.markdown("""
     }
     
     .stColumns {
-        gap: 1.5rem;
+        gap: 1rem;  /* 减小全局列间距 */
     }
     
     /* 调整输入框宽度 */
@@ -145,16 +145,16 @@ def state_change_to_text(state_change):
 # Streamlit 界面
 st.title("IPN Prediction Model with Probability Visualization")
 
-# 创建左右两栏布局 - 使用更平衡的比例
-left_col, right_col = st.columns([2, 1.5], gap="small")
+# 创建左右两栏布局 - 调整比例使左边往中间靠
+left_col, right_col = st.columns([1.5, 1], gap="medium")
 
 # 左侧栏：输入数据
 with left_col:
     st.header("Enter the following feature values:")
     user_inputs = {}
 
-    # 创建三列布局用于输入 - 调整比例让输入框更紧凑
-    col1, col2, col3 = st.columns([2, 2, 1.5])
+    # 创建三列布局用于输入 - 调整比例并减小间距
+    col1, col2, col3 = st.columns([1, 1, 0.9], gap="small")
 
     # 第一列：Admission indicators
     with col1:
@@ -373,15 +373,4 @@ with right_col:
             st.info("Please check if all input values are within the specified ranges and try again.")
     else:
         # 当还没有点击预测按钮时显示提示信息
-
         st.info("👈 Please enter the patient data in the left panel and click 'Predict' to see the results here.")
-
-
-
-
-
-
-
-
-
-

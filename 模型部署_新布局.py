@@ -122,7 +122,7 @@ def state_change_to_text(state_change):
 st.title("IPN Prediction Model with Probability Visualization")
 
 # 创建左右两栏布局 - 使用更宽的比例
-left_col, right_col = st.columns([1.2, 0.8])
+left_col, right_col = st.columns([1, 0.8])
 
 # 左侧栏：输入数据
 with left_col:
@@ -348,4 +348,5 @@ with right_col:
             st.info("Please check if all input values are within the specified ranges and try again.")
     else:
         # 当还没有点击预测按钮时显示提示信息
+
         st.info("👈 Please enter the patient data in the left panel and click 'Predict' to see the results here.")

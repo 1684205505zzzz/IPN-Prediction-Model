@@ -377,3 +377,4 @@ with right_col:
         st.info("👈 Please enter the patient data in the left panel and click 'Predict' to see the results here.")
 
 
+

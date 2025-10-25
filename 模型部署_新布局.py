@@ -85,7 +85,7 @@ def state_change_to_text(state_change):
 st.title("IPN Prediction Model with Probability Visualization")
 
 # 创建左右两栏布局
-left_col, right_col = st.columns([1, 1])
+left_col, right_col = st.columns([1.5, 1])
 
 # 左侧栏：输入数据
 with left_col:
@@ -320,4 +320,5 @@ with right_col:
         1. Fill in all the required patient data in the left panel
         2. Click the **Predict** button
         3. View the prediction results and probability visualization here
+
         """)

@@ -12,7 +12,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# 自定义CSS样式 - 彻底重新设计
+# 自定义CSS样式 - 极致的紧凑布局
 st.markdown("""
 <style>
     .main > div {
@@ -21,10 +21,10 @@ st.markdown("""
         padding-right: 2%;
     }
     
-    /* 彻底控制列间距 */
+    /* 极致的列间距控制 */
     div[data-testid="column"] {
-        padding-left: 5px !important;
-        padding-right: 5px !important;
+        padding-left: 2px !important;
+        padding-right: 2px !important;
     }
     
     .stNumberInput {
@@ -55,10 +55,18 @@ st.markdown("""
         padding-top: 1rem;
     }
     
-    /* 强制减少列之间的间距 */
+    /* 强制减少列之间的间距到极致 */
     .row-widget.stColumns {
-        margin-left: -5px !important;
-        margin-right: -5px !important;
+        margin-left: -3px !important;
+        margin-right: -3px !important;
+        gap: 0px !important;
+    }
+    
+    /* 针对三列布局的特定控制 */
+    div[data-testid="column"]:nth-child(1),
+    div[data-testid="column"]:nth-child(2),
+    div[data-testid="column"]:nth-child(3) {
+        margin-right: 2px !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -143,15 +151,15 @@ def state_change_to_text(state_change):
 # Streamlit 界面
 st.title("IPN Prediction Model with Probability Visualization")
 
-# 创建左右两栏布局 - 使用更精确的比例
-left_col, right_col = st.columns([1.15, 0.85])
+# 创建左右两栏布局 - 微调比例
+left_col, right_col = st.columns([1.2, 0.8])
 
 # 左侧栏：输入数据
 with left_col:
     st.header("Enter the following feature values:")
     user_inputs = {}
 
-    # 创建三列布局用于输入 - 使用更紧凑的比例
+    # 创建三列布局用于输入 - 使用紧凑比例
     col1, col2, col3 = st.columns([1, 1, 0.8])
 
     # 第一列：Admission indicators

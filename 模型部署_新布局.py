@@ -155,15 +155,17 @@ with left_col:
         
         # SOFA系统评分 - 入院时
         admission_sofa_features = [
-            "Respiratory system", "Renal system", "Cardiovascular system", 
-            "Coagulation system", "Hepatic system", "Neurological system"
+            "Respiratory_system", "Renal_system", "Cardiovascular_system", 
+            "Coagulation_system", "Hepatic_system", "Neurological_system"
         ]
         
         for feature_base in admission_sofa_features:
             feature_name = f"{feature_base}_admission"
             properties = original_feature_ranges[feature_name]
+            # 将下划线替换为空格显示
+            display_name = feature_base.replace("_", " ")
             user_inputs[feature_name] = st.number_input(
-                label=f"{feature_base} (0-4)",
+                label=f"{display_name} (0-4)",
                 min_value=0,
                 max_value=4,
                 value=int(properties["default"]),
@@ -194,13 +196,15 @@ with left_col:
         st.subheader("Week 2 indicators")
         
         # SOFA系统评分 - 第二周
-        week2_sofa_features = ["Respiratory system", "Renal system", "Cardiovascular system"]
+        week2_sofa_features = ["Respiratory_system", "Renal_system", "Cardiovascular_system"]
         
         for feature_base in week2_sofa_features:
             feature_name = f"{feature_base}_t2"
             properties = original_feature_ranges[feature_name]
+            # 将下划线替换为空格显示
+            display_name = feature_base.replace("_", " ")
             user_inputs[feature_name] = st.number_input(
-                label=f"{feature_base} (0-4)",
+                label=f"{display_name} (0-4)",
                 min_value=0,
                 max_value=4,
                 value=int(properties["default"]),

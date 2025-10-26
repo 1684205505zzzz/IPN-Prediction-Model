@@ -138,16 +138,16 @@ def state_change_to_text(state_change):
 # Streamlit 界面
 st.title("IPN Prediction Model with Probability Visualization")
 
-# 创建左右两栏布局 - 调整比例
-left_col, right_col = st.columns([1, 0.8])
+# 创建左右两栏布局 - 调整比例，让左侧栏更宽
+left_col, right_col = st.columns([1.3, 0.7])
 
 # 左侧栏：输入数据
 with left_col:
     st.header("Enter the following feature values:")
     user_inputs = {}
 
-    # 创建三列布局用于输入 - 使用更大的比例
-    col1, col2, col3 = st.columns([1.1, 1.1, 0.8])
+    # 创建三列布局用于输入 - 调整比例让第三列更靠左
+    col1, col2, col3 = st.columns([1.2, 1.2, 0.8])
 
     # 第一列：Admission indicators
     with col1:

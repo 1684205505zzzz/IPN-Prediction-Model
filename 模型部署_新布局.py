@@ -12,17 +12,19 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# 自定义CSS样式
+# 自定义CSS样式 - 彻底重新设计
 st.markdown("""
 <style>
     .main > div {
         max-width: 100%;
-        padding-left: 3%;
-        padding-right: 3%;
+        padding-left: 2%;
+        padding-right: 2%;
     }
     
-    .stColumns {
-        gap: 0.3rem;  /* 显著减小列间距 */
+    /* 彻底控制列间距 */
+    div[data-testid="column"] {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
     }
     
     .stNumberInput {
@@ -51,6 +53,12 @@ st.markdown("""
     
     .stHeader {
         padding-top: 1rem;
+    }
+    
+    /* 强制减少列之间的间距 */
+    .row-widget.stColumns {
+        margin-left: -5px !important;
+        margin-right: -5px !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -135,8 +143,8 @@ def state_change_to_text(state_change):
 # Streamlit 界面
 st.title("IPN Prediction Model with Probability Visualization")
 
-# 创建左右两栏布局 - 使用更平衡的比例
-left_col, right_col = st.columns([1.2, 0.8])
+# 创建左右两栏布局 - 使用更精确的比例
+left_col, right_col = st.columns([1.15, 0.85])
 
 # 左侧栏：输入数据
 with left_col:

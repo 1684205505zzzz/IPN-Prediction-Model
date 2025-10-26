@@ -26,8 +26,8 @@ st.markdown("""
     }
     
     .stNumberInput {
-        min-width: 120px !important;  /* 增加最小宽度 */
-        max-width: 180px !important;  /* 增加最大宽度限制 */
+        min-width: 180px !important;  /* 显著增加最小宽度 */
+        max-width: 250px !important;  /* 显著增加最大宽度限制 */
     }
     
     /* 新增：限制按钮宽度 */
@@ -146,8 +146,8 @@ with left_col:
     st.header("Enter the following feature values:")
     user_inputs = {}
 
-    # 创建三列布局用于输入 - 减小宽度比例但增加列之间的紧凑度
-    col1, col2, col3 = st.columns([0.9, 0.9, 0.7])
+    # 创建三列布局用于输入 - 使用更大的比例
+    col1, col2, col3 = st.columns([1.1, 1.1, 0.8])
 
     # 第一列：Admission indicators
     with col1:

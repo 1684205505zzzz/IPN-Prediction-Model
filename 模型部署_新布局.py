@@ -22,28 +22,25 @@ st.markdown("""
     }
     
     .stColumns {
-        gap: 0.5rem;  /* 进一步减小列间距 */
+        gap: 0.3rem;  /* 显著减小列间距 */
     }
     
     .stNumberInput {
-        min-width: 180px !important;  /* 显著增加最小宽度 */
-        max-width: 250px !important;  /* 显著增加最大宽度限制 */
+        min-width: 180px !important;
+        max-width: 250px !important;
     }
     
-    /* 新增：限制按钮宽度 */
     .stButton button {
         width: 100% !important;
-        max-width: 200px !important;  /* 限制按钮最大宽度 */
+        max-width: 200px !important;
     }
     
-    /* 新增：限制列容器宽度 */
     .element-container {
         max-width: 100% !important;
     }
     
-    /* 限制输入标签的宽度 */
     .stNumberInput label {
-        font-size: 0.9em;  /* 可选：减小字体大小 */
+        font-size: 0.9em;
     }
     
     h1 {
@@ -138,16 +135,16 @@ def state_change_to_text(state_change):
 # Streamlit 界面
 st.title("IPN Prediction Model with Probability Visualization")
 
-# 创建左右两栏布局 - 调整比例
-left_col, right_col = st.columns([1, 0.8])
+# 创建左右两栏布局 - 使用更平衡的比例
+left_col, right_col = st.columns([1.2, 0.8])
 
 # 左侧栏：输入数据
 with left_col:
     st.header("Enter the following feature values:")
     user_inputs = {}
 
-    # 创建三列布局用于输入 - 使用更大的比例
-    col1, col2, col3 = st.columns([1.1, 1.1, 0.8])
+    # 创建三列布局用于输入 - 使用更紧凑的比例
+    col1, col2, col3 = st.columns([1, 1, 0.8])
 
     # 第一列：Admission indicators
     with col1:

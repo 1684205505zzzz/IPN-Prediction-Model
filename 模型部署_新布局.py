@@ -22,11 +22,28 @@ st.markdown("""
     }
     
     .stColumns {
-        gap: 2rem;
+        gap: 1rem;  /* 减小列间距 */
     }
     
     .stNumberInput {
-        min-width: 120px;
+        min-width: 100px !important;  /* 减小最小宽度 */
+        max-width: 150px !important;  /* 添加最大宽度限制 */
+    }
+    
+    /* 新增：限制按钮宽度 */
+    .stButton button {
+        width: 100% !important;
+        max-width: 200px !important;  /* 限制按钮最大宽度 */
+    }
+    
+    /* 新增：限制列容器宽度 */
+    .element-container {
+        max-width: 100% !important;
+    }
+    
+    /* 限制输入标签的宽度 */
+    .stNumberInput label {
+        font-size: 0.9em;  /* 可选：减小字体大小 */
     }
     
     h1 {
@@ -121,15 +138,15 @@ def state_change_to_text(state_change):
 # Streamlit 界面
 st.title("IPN Prediction Model with Probability Visualization")
 
-# 创建左右两栏布局 - 使用更宽的比例
-left_col, right_col = st.columns([1.2, 0.8])
+# 创建左右两栏布局 - 调整比例
+left_col, right_col = st.columns([1, 0.8])
 
 # 左侧栏：输入数据
 with left_col:
     st.header("Enter the following feature values:")
     user_inputs = {}
 
-    # 创建三列布局用于输入
+    # 创建三列布局用于输入 - 减小宽度比例
     col1, col2, col3 = st.columns([0.8, 0.8, 0.6])
 
     # 第一列：Admission indicators
@@ -138,8 +155,8 @@ with left_col:
         
         # SOFA系统评分 - 入院时
         admission_sofa_features = [
-            "Respiratory_system", "Renal_system", "Cardiovascular_system", 
-            "Coagulation_system", "Hepatic_system", "Neurological_system"
+            "Respiratory system", "Renal system", "Cardiovascular system", 
+            "Coagulation system", "Hepatic system", "Neurological system"
         ]
         
         for feature_base in admission_sofa_features:
@@ -177,7 +194,7 @@ with left_col:
         st.subheader("Week 2 indicators")
         
         # SOFA系统评分 - 第二周
-        week2_sofa_features = ["Respiratory_system", "Renal_system", "Cardiovascular_system"]
+        week2_sofa_features = ["Respiratory system", "Renal system", "Cardiovascular system"]
         
         for feature_base in week2_sofa_features:
             feature_name = f"{feature_base}_t2"
@@ -242,7 +259,7 @@ with left_col:
         )
     
     # 预测按钮放在左侧栏底部
-    if st.button("Predict", key="predict_button", use_container_width=True):
+    if st.button("Predict", key="predict_button", use_container_width=False):
         # 将用户输入存储到session state中，以便右侧栏可以访问
         st.session_state.user_inputs = user_inputs
         st.session_state.predict_clicked = True
@@ -349,6 +366,3 @@ with right_col:
     else:
         # 当还没有点击预测按钮时显示提示信息
         st.info("👈 Please enter the patient data in the left panel and click 'Predict' to see the results here.")
-
-
-

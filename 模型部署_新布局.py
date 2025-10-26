@@ -22,12 +22,12 @@ st.markdown("""
     }
     
     .stColumns {
-        gap: 1rem;  /* 减小列间距 */
+        gap: 0.5rem;  /* 进一步减小列间距 */
     }
     
     .stNumberInput {
-        min-width: 120px !important;  /* 减小最小宽度 */
-        max-width: 180px !important;  /* 添加最大宽度限制 */
+        min-width: 120px !important;  /* 增加最小宽度 */
+        max-width: 180px !important;  /* 增加最大宽度限制 */
     }
     
     /* 新增：限制按钮宽度 */
@@ -146,8 +146,8 @@ with left_col:
     st.header("Enter the following feature values:")
     user_inputs = {}
 
-    # 创建三列布局用于输入 - 减小宽度比例
-    col1, col2, col3 = st.columns([0.8, 0.8, 0.6])
+    # 创建三列布局用于输入 - 减小宽度比例但增加列之间的紧凑度
+    col1, col2, col3 = st.columns([0.9, 0.9, 0.7])
 
     # 第一列：Admission indicators
     with col1:
@@ -370,4 +370,3 @@ with right_col:
     else:
         # 当还没有点击预测按钮时显示提示信息
         st.info("👈 Please enter the patient data in the left panel and click 'Predict' to see the results here.")
-

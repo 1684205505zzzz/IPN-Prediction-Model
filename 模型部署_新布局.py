@@ -130,7 +130,7 @@ with left_col:
     user_inputs = {}
 
     # 创建三列布局用于输入
-    col1, col2, col3 = st.columns([1, 1, 0.8])
+    col1, col2, col3 = st.columns([0.8, 0.8, 0.6])
 
     # 第一列：Admission indicators
     with col1:
@@ -349,5 +349,6 @@ with right_col:
     else:
         # 当还没有点击预测按钮时显示提示信息
         st.info("👈 Please enter the patient data in the left panel and click 'Predict' to see the results here.")
+
 
 

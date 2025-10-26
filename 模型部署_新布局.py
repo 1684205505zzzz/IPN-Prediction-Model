@@ -26,7 +26,7 @@ st.markdown("""
     }
     
     .stNumberInput {
-        min-width: 180px;
+        min-width: 150px;
     }
     
     h1 {
@@ -349,3 +349,4 @@ with right_col:
     else:
         # 当还没有点击预测按钮时显示提示信息
         st.info("👈 Please enter the patient data in the left panel and click 'Predict' to see the results here.")
+

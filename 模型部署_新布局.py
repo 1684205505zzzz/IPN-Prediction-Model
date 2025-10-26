@@ -22,7 +22,7 @@ st.markdown("""
     }
     
     .stColumns {
-        gap: 1rem;  /* 减小全局列间距 */
+        gap: 0.5rem;  /* 进一步减小全局列间距 */
     }
     
     /* 调整输入框宽度 */
@@ -32,8 +32,8 @@ st.markdown("""
     
     /* 调整标签和输入框容器的宽度 */
     .stNumberInput {
-        min-width: 150px;
-        max-width: 180px;
+        min-width: 140px;  /* 减小最小宽度 */
+        max-width: 160px;  /* 减小最大宽度 */
     }
     
     /* 调整按钮宽度 */
@@ -61,6 +61,12 @@ st.markdown("""
     /* 调整子标题的字体大小 */
     h3 {
         font-size: 1.1rem;
+        margin-bottom: 0.8rem;  /* 减小子标题底部间距 */
+    }
+    
+    /* 减小输入框之间的垂直间距 */
+    .stNumberInput {
+        margin-bottom: 0.5rem;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -145,16 +151,16 @@ def state_change_to_text(state_change):
 # Streamlit 界面
 st.title("IPN Prediction Model with Probability Visualization")
 
-# 创建左右两栏布局 - 调整比例使左边往中间靠
-left_col, right_col = st.columns([1.5, 1], gap="medium")
+# 创建左右两栏布局 - 进一步调整比例
+left_col, right_col = st.columns([1.4, 1], gap="small")
 
 # 左侧栏：输入数据
 with left_col:
     st.header("Enter the following feature values:")
     user_inputs = {}
 
-    # 创建三列布局用于输入 - 调整比例并减小间距
-    col1, col2, col3 = st.columns([1, 1, 0.9], gap="small")
+    # 创建三列布局用于输入 - 使用更小的间距
+    col1, col2, col3 = st.columns([1, 1, 0.9], gap="0.1rem")
 
     # 第一列：Admission indicators
     with col1:

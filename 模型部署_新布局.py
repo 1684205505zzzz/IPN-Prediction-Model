@@ -27,7 +27,7 @@ st.markdown("""
     
     /* 调整输入框宽度 */
     .stNumberInput > div > div > input {
-        max-width: 100px;
+        max-width: 150px;
     }
     
     /* 调整标签和输入框容器的宽度 */
@@ -380,4 +380,5 @@ with right_col:
     else:
         # 当还没有点击预测按钮时显示提示信息
         st.info("👈 Please enter the patient data in the left panel and click 'Predict' to see the results here.")
+
 

@@ -22,7 +22,7 @@ st.markdown("""
     }
     
     .stColumns {
-        gap: 0.2rem;  /* 减小全局列间距 */
+        gap: 0.05rem;  /* 减小全局列间距 */
     }
     
     /* 调整输入框宽度 */
@@ -380,3 +380,4 @@ with right_col:
     else:
         # 当还没有点击预测按钮时显示提示信息
         st.info("👈 Please enter the patient data in the left panel and click 'Predict' to see the results here.")
+
